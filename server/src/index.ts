@@ -1,6 +1,6 @@
 import "dotenv/config";
 
-import io from "./server";
+import io, { server } from "./server";
 import { SocketType } from "types/socket";
 import { MessageHandler } from "./socket/handlers/message";
 
@@ -16,5 +16,10 @@ io.on("connection", (socket: SocketType) => {
     });
 });
 
-io.listen(parseInt(process.env.SOCKET_PORT || "3001"));
+// @ts-ignore
+if (typeof PhusionPassenger !== "undefined") {
+    server.listen("passenger");
+} else {
+    server.listen(parseInt(process.env.SOCKET_PORT || "3001"));
+}
 console.log(`Socket server listening on port ${process.env.SOCKET_PORT || "3001"} and cors ${process.env.CORS_ORIGIN}`);
