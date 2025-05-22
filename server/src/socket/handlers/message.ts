@@ -1,8 +1,8 @@
 import { SocketType } from "types/socket";
 import Server from "server";
-import { ResponseCallback } from "shared/response/callback";
-import { failure, success } from "shared/response/constructors";
-import { PayloadMessage } from "shared/payloads/payload-message";
+import { ResponseCallback } from "#/callback";
+import { PayloadMessage } from "#/payload-message";
+import { failure, success } from "#/constructors";
 
 export class MessageHandler {
     io: typeof Server;

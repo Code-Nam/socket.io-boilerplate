@@ -34,7 +34,7 @@ export class MessageEmitters {
         };
 
         try {
-            this.socket.emit("message:ping", payload, (callback: Response<string>) => {
+            this.socket.emit("message:pinguuuuuu", payload, (callback: Response<string>) => {
                 if (!callback.success) return callback.error;
                 console.log(callback.data);
             });
