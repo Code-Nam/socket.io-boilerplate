@@ -4,8 +4,8 @@ import { createServer } from "node:http";
 
 import { DefaultEventsMap, Server } from "socket.io";
 import { originConfig } from "./config/cors";
-import { ClientsToServerEvents } from "#/client-to-server";
-import { ServerToClientEvents } from "#/server-to-client";
+import { ServerToClientEvents } from "types/server-to-client";
+import { ClientsToServerEvents } from "types/client-to-server";
 
 const app = express();
 const corsConfig = cors({

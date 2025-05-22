@@ -1,14 +1,13 @@
 import { SocketType } from "types/socket";
-import Server from "server";
-import { ResponseCallback } from "#/callback";
-import { PayloadMessage } from "#/payload-message";
-import { failure, success } from "#/constructors";
+import { PayloadMessage } from "types/payload-message";
+import { ResponseCallback } from "types/callback";
+import { failure, success } from "types/constructors";
 
 export class MessageHandler {
-    io: typeof Server;
+    io: any;
     socket: SocketType;
 
-    constructor(io: typeof Server, socket: SocketType) {
+    constructor(io: any, socket: SocketType) {
         this.io = io;
         this.socket = socket;
         this.initListeners();

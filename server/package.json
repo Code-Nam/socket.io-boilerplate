@@ -9,6 +9,7 @@
     },
     "devDependencies": {
         "prettier": "^3.5.3",
+        "tsc-alias": "^1.8.16",
         "tsx": "^4.19.4",
         "typescript": "^5.8.3"
     },
@@ -16,6 +17,6 @@
         "dev": "tsx watch src/index.ts",
         "lint:prettier": "prettier --check .",
         "format": "prettier --write .",
-        "build": "npx tsc --outDir dist"
+        "build": "npx tsc && npx tsc-alias"
     }
 }
